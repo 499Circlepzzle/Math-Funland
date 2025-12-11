@@ -1,0 +1,202 @@
+✅ Replit Prompt: Dice Counting & Subtraction Funland — Preschool Counting & Subtraction App
+
+Title: Dice Counting & Subtraction Funland
+Target age: 4–6 years (preschool → Grade 1 readiness)
+Goal: Build a joyful, tactile app that teaches counting to 12, subitizing, number sequencing, and visual subtraction (take-away) using dice, movement, animated characters, and simple drag/drop interactions. No reading required.
+
+🌟 High-level Requirements
+
+Browser app built with HTML, CSS, JavaScript (no heavy frameworks required).
+
+Responsive for tablet/phone and Chromebook; touch-first interactions.
+
+Clean, modular code (ES6 modules).
+
+Smooth animations and child-friendly audio cues.
+
+Lightweight assets for low-end devices.
+
+All assets local (no external CDNs) so it runs offline after load.
+
+🎲 Core Gameplay Modules (each a separate JS module)
+
+Home / Hub
+
+Big Start button, avatar select (choose Dino / Mimi / Hugo / Pip), settings (audio on/off), Parent/Teacher mode.
+
+Progress panel showing badges/stickers.
+
+Module A — Dice Roll & Count
+
+Single or double dice mode (configurable).
+
+Roll animation + spoken audio (e.g., “You rolled six!”).
+
+Visual: large dice, counters appear; child taps to count or drags counters to a target.
+
+Learning: subitizing with single die patterns (1–6) and combined totals (7–12).
+
+Module B — Dice Jump Path (Number Line)
+
+Floor number line 0–12; physical/haptic jump visuals.
+
+Child rolls a die and the avatar hops forward; optional “start at 10 and go backwards” variant.
+
+Mini challenges: land exactly on target, reach a checkpoint.
+
+Module C — Dice Feeding / Take Away (Subtraction Stories)
+
+Short, narrated story scenes (e.g., “Hugo has 7 apples. 2 fly away!”).
+
+Use counters/animal food; animate items leaving the scene; child counts remaining.
+
+Supports dice-driven events (roll → how many are taken away).
+
+Module D — Tiny Subtraction Puzzles (Multiple Choice Visuals)
+
+Show an initial quantity (icons), animate X items removed, show 3 answer bubbles (tap).
+
+Friendly feedback for correct/incorrect answers; gentle nudge for wrong answers (e.g., hint animation).
+
+Module E — Match & Race (Timed Playful Rounds)
+
+Match dice pattern to numeral quickly (timed friendly rounds).
+
+Race element with on-screen friends to add fun and build speed.
+
+🧩 UX / Design Guidelines
+
+Big, rounded buttons (>48px target) and large touch targets.
+
+High contrast, saturated preschool palette, but avoid neon.
+
+Minimal text — use voice prompts and icons.
+
+Simple consistent navigation: Back, Replay, Home.
+
+Soft background music with mute toggle.
+
+Accessibility: audio descriptions of actions, large fonts for parents.
+
+🔊 Audio & Feedback
+
+Spoken prompts for instructions (female/male friendly neutral voice).
+
+Sounds: dice roll, hop, cheer, gentle buzzer for wrong answer.
+
+Visual celebration: confetti, stickers, stars.
+
+Sticker collection (gallery) and badges (e.g., Counting Champ, Subtraction Star).
+
+🧾 Teacher / Parent Mode (optional but recommended)
+
+Toggle difficulty: Dice range (1–6 vs 1–12), enable 2-dice combos.
+
+Set lesson length (5/10/15 rounds).
+
+View simple session log: rounds played, percent correct, badges earned. (Local only; no cloud unless specified.)
+
+📁 Suggested File Structure
+index.html
+style.css
+src/
+  app.js           // router + bootstrap
+  ui/
+    ui-base.js
+    audio-manager.js
+  modules/
+    home.js
+    dice-count.js
+    jump-path.js
+    feeding-subtract.js
+    tiny-puzzles.js
+    match-race.js
+  utils/
+    animation.js
+    storage.js
+    voice.js
+assets/
+  images/
+    avatars/
+    dice/
+    counters/
+    backgrounds/
+    stickers/
+  sounds/
+    voice/
+    sfx/
+  fonts/
+
+🛠 Technical Implementation Notes
+
+Use requestAnimationFrame for animations.
+
+Implement drag & drop with pointer events (pointerdown/pointermove/pointerup) for cross-device compatibility.
+
+Simple virtual dice: render as animated sprites or CSS transforms. Optionally use <canvas> for dice visuals.
+
+Use Web Audio API for sound playback (preload and handle user gesture requirement).
+
+Store progress in localStorage (use storage.js wrapper).
+
+Keep asset sizes small (spritesheets, compressed audio ~64–128 kbps).
+
+🎨 Assets Required (minimal starter list)
+
+Avatar sprites: Dino, Mimi, Hugo, Pip (idle + celebrate + jump).
+
+Dice faces 1–6 (and combined imagery for 7–12 if desired).
+
+Counter icons: apples, tokens, animals.
+
+Backgrounds: Dice Town main, number line scene, feeding scene, puzzle backdrop.
+
+UI icons: play, replay, home, back, badge, backpack.
+
+Sounds: roll.mp3, cheer.mp3, correct.wav, wrong.wav, click.wav, ambient_loop.mp3.
+
+Spoken audio lines for all prompts (or implement TTS fallback).
+
+✅ Deliverables (for sprint)
+
+Fully playable MVP with Modules A–C (Dice Roll & Count, Dice Jump Path, Feeding/Subtraction).
+
+Polish: celebration effects, stickers, at least 8 story puzzles.
+
+Responsive layout + tested on phone/tablet/browser.
+
+README describing how to run, build steps, and where to add new puzzles.
+
+Optional: simple Teacher Mode panel and local session log.
+
+🧪 Testing Checklist
+
+Touch interactions: drag/drop, tap accuracy.
+
+Dice randomness and animation feel.
+
+Audio plays only after first user gesture (mobile browsers).
+
+No negative subtraction allowed — ensure removing count never goes below zero; if dice would cause negative, re-roll or clamp and explain.
+
+Accessibility check: audio cues for every screen change.
+
+🔀 Bonus Features (future sprints)
+
+Adaptive difficulty (AI picks simpler/harder tasks based on child performance).
+
+Multi-player local pass-and-play mini games.
+
+Printable activity sheets that match in-app puzzles.
+
+Teacher cloud dashboard (requires backend + consent).
+
+💬 Acceptance Criteria
+
+Child can complete 5 rounds of mixed tasks without reading.
+
+Visual subtraction clearly shows items removed and remaining.
+
+App runs smoothly on a 2015 Chromebook and an iPad.
+
+Parents can toggle difficulty and see simple progress.
