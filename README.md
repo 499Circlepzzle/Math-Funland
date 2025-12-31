@@ -1,36 +1,81 @@
-# Dice Counting & Subtraction Funland
+# 🎲 Dice Counting & Subtraction Funland
 
-A joyful math app for preschool learners (Ages 4-6).
+A joyful, touch-first math application designed for preschool learners (Ages 4-6). Built with love using React and Tailwind CSS.
 
-## Features
+![Project Banner](attached_assets/generated_images/cute_preschool_animal_mascots_sheet.png)
 
-- **Module A: Roll & Count**: Interactive dice rolling and counting practice.
-- **Module B: Jump Path**: Number line navigation game.
-- **Module C: Feeding Time**: Subtraction stories with visual cues.
-- **Child-Friendly**: No reading required, audio cues, large touch targets.
-- **Offline Capable**: All assets are local.
+## 🌟 Features
 
-## How to Run
+### 🧩 Core Modules
+*   **Module A: Roll & Count**: Interactive 3D dice rolling. Children roll a die and count the pips by tapping them, reinforcing 1-to-1 correspondence.
+*   **Module B: Jump Path**: A digital "number line" board game. Roll the dice to jump an avatar towards the finish line, teaching number sequencing and addition concepts.
+*   **Module C: Feeding Time**: A playful subtraction story. "Feed" apples to hungry animal friends and see how many are left.
 
-1.  Install dependencies: `npm install`
-2.  Start the development server: `npm run dev:client`
-3.  Open the application in your browser.
+### 🎨 Design & Experience
+*   **Touch-First**: Large touch targets (>48px) designed for small hands on tablets and touchscreens.
+*   **No Reading Required**: Full audio voiceovers and sound effects guide the child through every step.
+*   **Soft Pop Aesthetic**: Friendly colors, rounded shapes, and cute animal avatars (Dino 🦖, Mimi 🐰, Hugo 🐻, Pip 🐦).
+*   **Offline Capable**: All assets are local; works without an internet connection after loading.
 
-## Adding Content
+## 🛠️ Technology Stack
 
-### New Modules
-To add a new game module:
-1.  Create a new page in `client/src/pages/`.
-2.  Add the route in `client/src/App.tsx`.
-3.  Add a link card in `client/src/pages/home.tsx`.
+*   **Frontend**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+*   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+*   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+*   **Routing**: [Wouter](https://github.com/molefrog/wouter)
+*   **Audio**: Web Audio API (Synthesized & SFX)
 
-### Customizing Assets
-- **Avatars**: Defined in `client/src/components/ui/character-avatar.tsx`.
-- **Audio**: Managed in `client/src/lib/audio.ts`.
+## 🚀 Getting Started
 
-## Tech Stack
-- React
-- Tailwind CSS
-- Framer Motion (Animations)
-- Zustand (State Management)
-- Wouter (Routing)
+### Prerequisites
+*   Node.js (v18 or higher)
+*   npm or yarn
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/dice-counting-funland.git
+    cd dice-counting-funland
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+    ```bash
+    npm run dev:client
+    ```
+
+4.  Open your browser at `http://localhost:5000`.
+
+## 📁 Project Structure
+
+```
+client/
+├── src/
+│   ├── components/
+│   │   ├── ui/           # Reusable UI components (Buttons, Avatars, Dice)
+│   │   └── layout/       # Game layout wrappers
+│   ├── pages/            # Game modules (Home, Count, Jump, Feed)
+│   ├── lib/              # Utilities, Stores, Audio Manager
+│   └── App.tsx           # Main Router
+└── index.html            # Entry point
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+1.  Fork the project
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
